@@ -60,13 +60,13 @@ const datosWeb = {
             "año": "2010 - Presente",
             "cargo": "Revisora Fiscal",
             "empresa": "Cuerpo de bomberos voluntarios de Yondó",
-            "descripcion": "Supervisión del área contable, verificación del cumplimiento normativo y fiscal, implementación de NIIF y elaboración de informes financieros. Coordinación de auditorías y liderazgo de un equipo de 5 profesionales."
+            "descripcion": "Supervisión del área contable, verificación del cumplimiento normativo y fiscal, implementación de NIIF y elaboración de informes financieros. Coordinación de auditorías y liderazgo."
         },
         {
             "año": "2012 - Presente",
             "cargo": "Contadora - Revisora Fiscal",
             "empresa": "Funderprocar",
-            "descripcion": "Revisión y validación de información contable, elaboración de estados financieros bajo NIIF, manejo de obligaciones tributarias y conciliaciones bancarias. Generación de reportes financieros para la toma de decisiones."
+            "descripcion": "Revisión y validación de información contable, elaboración de estados financieros, manejo de obligaciones tributarias y conciliaciones bancarias. Generación de reportes financieros para la toma de decisiones."
         },
         {
             "año": "2023 - Presente",
