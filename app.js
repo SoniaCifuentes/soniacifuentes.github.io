@@ -13,7 +13,7 @@ const datosWeb = {
         badge: "Contadora Pública Certificada",
         badgeIcono: "fa-certificate",
         titulo: "Optimiza tu contabilidad con asesoría profesional",
-        subtitulo: "Más de 10 años ayudando a empresas y personas en Colombia a cumplir con sus obligaciones fiscales de manera eficiente"
+        subtitulo: "Más de 14 años ayudando a empresas y personas en Colombia a cumplir con sus obligaciones fiscales de manera eficiente"
     },
 
     servicios: [
