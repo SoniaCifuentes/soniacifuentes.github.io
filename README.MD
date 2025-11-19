@@ -70,8 +70,10 @@ soniacifuentes.github.io/
 ├── app.js                  # Lógica de la aplicación
 ├── favicon.svg             # Favicon del sitio
 ├── public/
-│   └── css/
-│       └── style.css       # Estilos principales
+│   ├── css/
+│   ├──   └── style.css       # Estilos principales
+│   └── img/
+│         └── preview.png
 ├── README.md               # Este archivo
 └── LICENSE                 # Licencia MIT
 ```
