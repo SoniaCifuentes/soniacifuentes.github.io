@@ -98,7 +98,7 @@ const datosWeb = {
     contacto: {
         telefono: "+57 302 6870555",
         email: "soniacifuentes1974@gmail.com",
-        direccion: "Yondó, Colombia",
+        direccion: "Carrera 50 #54- 06, Yondó Antioquia, Colombia",
         horario: "Lun - Vie: 8:00 AM - 8:00 PM"
     },
 
