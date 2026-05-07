@@ -307,67 +307,64 @@ style.textContent = `
 document.head.appendChild(style);
 
 const fechasRenta = [
-    // ── AGOSTO ──
-    { digitos: [1, 2],   fecha: "12 de agosto de 2025",   mes: "agosto" },
-    { digitos: [3, 4],   fecha: "13 de agosto de 2025",   mes: "agosto" },
-    { digitos: [5, 6],   fecha: "14 de agosto de 2025",   mes: "agosto" },
-    { digitos: [7, 8],   fecha: "18 de agosto de 2025",   mes: "agosto" },
-    { digitos: [9, 10],  fecha: "19 de agosto de 2025",   mes: "agosto" },
-    { digitos: [11, 12], fecha: "20 de agosto de 2025",   mes: "agosto" },
-    { digitos: [13, 14], fecha: "21 de agosto de 2025",   mes: "agosto" },
-    { digitos: [15, 16], fecha: "24 de agosto de 2025",   mes: "agosto" },
-    { digitos: [17, 18], fecha: "25 de agosto de 2025",   mes: "agosto" },
-    { digitos: [19, 20], fecha: "26 de agosto de 2025",   mes: "agosto" },
-    { digitos: [21, 22], fecha: "27 de agosto de 2025",   mes: "agosto" },
-    { digitos: [23, 24], fecha: "28 de agosto de 2025",   mes: "agosto" },
-    { digitos: [25, 26], fecha: "31 de agosto de 2025",   mes: "agosto" },
-    // ── SEPTIEMBRE ──
-    { digitos: [27, 28], fecha: "1 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [29, 30], fecha: "2 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [31, 32], fecha: "3 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [33, 34], fecha: "4 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [35, 36], fecha: "7 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [37, 38], fecha: "8 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [39, 40], fecha: "9 de septiembre de 2025",  mes: "septiembre" },
-    { digitos: [41, 42], fecha: "10 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [43, 44], fecha: "11 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [45, 46], fecha: "14 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [47, 48], fecha: "15 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [49, 50], fecha: "16 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [51, 52], fecha: "17 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [53, 54], fecha: "18 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [55, 56], fecha: "21 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [57, 58], fecha: "22 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [59, 60], fecha: "23 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [61, 62], fecha: "24 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [63, 64], fecha: "25 de septiembre de 2025", mes: "septiembre" },
-    { digitos: [65, 66], fecha: "28 de septiembre de 2025", mes: "septiembre" },
-    // ── OCTUBRE ──
-    { digitos: [67, 68], fecha: "1 de octubre de 2025",  mes: "octubre" },
-    { digitos: [69, 70], fecha: "2 de octubre de 2025",  mes: "octubre" },
-    { digitos: [71, 72], fecha: "5 de octubre de 2025",  mes: "octubre" },
-    { digitos: [73, 74], fecha: "6 de octubre de 2025",  mes: "octubre" },
-    { digitos: [75, 76], fecha: "7 de octubre de 2025",  mes: "octubre" },
-    { digitos: [77, 78], fecha: "8 de octubre de 2025",  mes: "octubre" },
-    { digitos: [79, 80], fecha: "9 de octubre de 2025",  mes: "octubre" },
-    { digitos: [81, 82], fecha: "13 de octubre de 2025", mes: "octubre" },
-    { digitos: [83, 84], fecha: "14 de octubre de 2025", mes: "octubre" },
-    { digitos: [85, 86], fecha: "15 de octubre de 2025", mes: "octubre" },
-    { digitos: [87, 88], fecha: "16 de octubre de 2025", mes: "octubre" },
-    { digitos: [89, 90], fecha: "19 de octubre de 2025", mes: "octubre" },
-    { digitos: [91, 92], fecha: "20 de octubre de 2025", mes: "octubre" },
-    { digitos: [93, 94], fecha: "21 de octubre de 2025", mes: "octubre" },
-    { digitos: [95, 96], fecha: "22 de octubre de 2025", mes: "octubre" },
-    { digitos: [97, 98], fecha: "23 de octubre de 2025", mes: "octubre" },
-    { digitos: [99,  0], fecha: "26 de octubre de 2025", mes: "octubre" },
+    { digitos: [1, 2],   fecha: "12 de agosto de 2026",   mes: "agosto" },
+    { digitos: [3, 4],   fecha: "13 de agosto de 2026",   mes: "agosto" },
+    { digitos: [5, 6],   fecha: "14 de agosto de 2026",   mes: "agosto" },
+    { digitos: [7, 8],   fecha: "18 de agosto de 2026",   mes: "agosto" },
+    { digitos: [9, 10],  fecha: "19 de agosto de 2026",   mes: "agosto" },
+    { digitos: [11, 12], fecha: "20 de agosto de 2026",   mes: "agosto" },
+    { digitos: [13, 14], fecha: "21 de agosto de 2026",   mes: "agosto" },
+    { digitos: [15, 16], fecha: "24 de agosto de 2026",   mes: "agosto" },
+    { digitos: [17, 18], fecha: "25 de agosto de 2026",   mes: "agosto" },
+    { digitos: [19, 20], fecha: "26 de agosto de 2026",   mes: "agosto" },
+    { digitos: [21, 22], fecha: "27 de agosto de 2026",   mes: "agosto" },
+    { digitos: [23, 24], fecha: "28 de agosto de 2026",   mes: "agosto" },
+    { digitos: [25, 26], fecha: "31 de agosto de 2026",   mes: "agosto" },
+
+    { digitos: [27, 28], fecha: "1 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [29, 30], fecha: "2 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [31, 32], fecha: "3 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [33, 34], fecha: "4 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [35, 36], fecha: "7 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [37, 38], fecha: "8 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [39, 40], fecha: "9 de septiembre de 2026",  mes: "septiembre" },
+    { digitos: [41, 42], fecha: "10 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [43, 44], fecha: "11 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [45, 46], fecha: "14 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [47, 48], fecha: "15 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [49, 50], fecha: "16 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [51, 52], fecha: "17 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [53, 54], fecha: "18 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [55, 56], fecha: "21 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [57, 58], fecha: "22 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [59, 60], fecha: "23 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [61, 62], fecha: "24 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [63, 64], fecha: "25 de septiembre de 2026", mes: "septiembre" },
+    { digitos: [65, 66], fecha: "28 de septiembre de 2026", mes: "septiembre" },
+
+    { digitos: [67, 68], fecha: "1 de octubre de 2026",  mes: "octubre" },
+    { digitos: [69, 70], fecha: "2 de octubre de 2026",  mes: "octubre" },
+    { digitos: [71, 72], fecha: "5 de octubre de 2026",  mes: "octubre" },
+    { digitos: [73, 74], fecha: "6 de octubre de 2026",  mes: "octubre" },
+    { digitos: [75, 76], fecha: "7 de octubre de 2026",  mes: "octubre" },
+    { digitos: [77, 78], fecha: "8 de octubre de 2026",  mes: "octubre" },
+    { digitos: [79, 80], fecha: "9 de octubre de 2026",  mes: "octubre" },
+    { digitos: [81, 82], fecha: "13 de octubre de 2026", mes: "octubre" },
+    { digitos: [83, 84], fecha: "14 de octubre de 2026", mes: "octubre" },
+    { digitos: [85, 86], fecha: "15 de octubre de 2026", mes: "octubre" },
+    { digitos: [87, 88], fecha: "16 de octubre de 2026", mes: "octubre" },
+    { digitos: [89, 90], fecha: "19 de octubre de 2026", mes: "octubre" },
+    { digitos: [91, 92], fecha: "20 de octubre de 2026", mes: "octubre" },
+    { digitos: [93, 94], fecha: "21 de octubre de 2026", mes: "octubre" },
+    { digitos: [95, 96], fecha: "22 de octubre de 2026", mes: "octubre" },
+    { digitos: [97, 98], fecha: "23 de octubre de 2026", mes: "octubre" },
+    { digitos: [99,  0], fecha: "26 de octubre de 2026", mes: "octubre" },
 ];
 
-// ── Función principal: buscar fecha por los 2 últimos dígitos ─
 function buscarFechaRenta(cedula) {
     const limpia = cedula.replace(/\D/g, '');
     if (limpia.length < 2) return null;
 
-    // Toma los 2 últimos dígitos como número (00 → 0, 01 → 1, etc.)
     const ultimos2 = parseInt(limpia.slice(-2), 10);
 
     for (const entrada of fechasRenta) {
@@ -378,7 +375,6 @@ function buscarFechaRenta(cedula) {
     return null;
 }
 
-// ── Inicializar modal ────────────────────────────────────────
 function inicializarModalRenta() {
     const btnRenta    = document.getElementById('btnRenta');
     const modal       = document.getElementById('modalRenta');
@@ -387,7 +383,6 @@ function inicializarModalRenta() {
     const cedulaInput = document.getElementById('cedulaInput');
     const resultado   = document.getElementById('modalResultado');
 
-    // Fecha de inicio de vigencia: 1 de agosto de 2025
     const INICIO_VIGENCIA = new Date('2025-08-01T00:00:00');
 
     function abrirModal() {
@@ -411,22 +406,18 @@ function inicializarModalRenta() {
     btnRenta.addEventListener('click', abrirModal);
     modalClose.addEventListener('click', cerrarModal);
 
-    // Cerrar al hacer click fuera del box
     modal.addEventListener('click', function(e) {
         if (e.target === modal) cerrarModal();
     });
 
-    // Cerrar con Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') cerrarModal();
     });
 
-    // Consultar al presionar Enter
     cedulaInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') consultarBtn.click();
     });
 
-    // Solo permitir números
     cedulaInput.addEventListener('input', function() {
         this.value = this.value.replace(/\D/g, '');
     });
