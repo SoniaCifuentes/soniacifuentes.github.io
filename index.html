@@ -1,161 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sonia Cifuentes - Contadora</title>
 
     <!-- Icon Web  -->
-    <link rel="icon" href="favicon.svg" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/x-icon" />
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/style.css" />
 
     <!-- Open Graph / WhatsApp / Facebook Preview -->
-    <meta property="og:title" content="Sonia Cifuentes - Contadora Profesional">
-    <meta property="og:description" content="Servicios contables, asesoría tributaria y acompañamiento profesional para empresas y personas.">
-    <meta property="og:image" content="https://soniacifuentes.github.io/public/img/preview.jpg">
-    <meta property="og:url" content="https://soniacifuentes.github.io/">
-    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Sonia Cifuentes - Contadora Profesional"
+    />
+    <meta
+      property="og:description"
+      content="Servicios contables, asesoría tributaria y acompañamiento profesional para empresas y personas."
+    />
+    <meta
+      property="og:image"
+      content="https://soniacifuentes.github.io/public/img/preview.jpg"
+    />
+    <meta property="og:url" content="https://soniacifuentes.github.io/" />
+    <meta property="og:type" content="website" />
 
     <!-- Twitter Card Preview -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sonia Cifuentes - Contadora Profesional">
-    <meta name="twitter:description" content="Servicios contables y tributarios confiables, profesionales y adaptados a tus necesidades.">
-    <meta name="twitter:image" content="https://soniacifuentes.github.io/public/img/preview.jpg">
-
-</head>
-<body>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sonia Cifuentes - Contadora Profesional"
+    />
+    <meta
+      name="twitter:description"
+      content="Servicios contables y tributarios confiables, profesionales y adaptados a tus necesidades."
+    />
+    <meta
+      name="twitter:image"
+      content="https://soniacifuentes.github.io/public/img/preview.jpg"
+    />
+  </head>
+  <body>
     <div id="skeleton" class="skeleton-wrapper">
-        <div class="skeleton-header"></div>
-        <div class="skeleton-hero"></div>
-        <div class="skeleton-content">
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-        </div>
+      <div class="skeleton-header"></div>
+      <div class="skeleton-hero"></div>
+      <div class="skeleton-content">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
     </div>
 
     <div id="content" class="hidden">
-        <div class="menu-overlay" id="menuOverlay"></div>
-        <header>
-            <nav class="container">
-                <div class="logo" id="logo"></div>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="menu" id="menu"></ul>
-            </nav>
-        </header>
+      <div class="menu-overlay" id="menuOverlay"></div>
+      <header>
+        <nav class="container">
+          <div class="logo" id="logo"></div>
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="menu" id="menu"></ul>
+        </nav>
+      </header>
 
-        <section id="inicio" class="hero">
-            <div class="hero-content">
-                <div class="hero-badge" id="heroBadge"></div>
-                <h1 id="heroTitulo" class="fade-in"></h1>
-                <p id="heroSubtitulo" class="fade-in"></p>
-                <a href="#servicios" class="cta-button">
-                    <span>Conocer Servicios</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="hero-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </section>
+      <section id="inicio" class="hero">
+        <div class="hero-content">
+          <div class="hero-badge" id="heroBadge"></div>
+          <h1 id="heroTitulo" class="fade-in"></h1>
+          <p id="heroSubtitulo" class="fade-in"></p>
+          <div class="hero-buttons">
+            <a href="#servicios" class="cta-button">
+              <span>Conocer Servicios</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <button class="cta-button cta-button--secondary" id="btnRenta">
+              <i class="fas fa-file-invoice-dollar"></i>
+              <span>Consulta tu declaración de renta</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </section>
 
-        <section id="servicios">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Servicios Profesionales</h2>
-                    <p>Soluciones contables adaptadas a tus necesidades</p>
+      <section id="servicios">
+        <div class="container">
+          <div class="section-header">
+            <h2>Servicios Profesionales</h2>
+            <p>Soluciones contables adaptadas a tus necesidades</p>
+          </div>
+          <div class="servicios-grid" id="serviciosGrid"></div>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <div class="container">
+          <div class="section-header">
+            <h2>Experiencia</h2>
+            <p>Trayectoria profesional destacada</p>
+          </div>
+          <div class="experiencia-timeline" id="experienciaTimeline"></div>
+        </div>
+      </section>
+
+      <section id="sobre">
+        <div class="container">
+          <div class="sobre-grid">
+            <div class="sobre-image">
+              <div class="sobre-card">
+                <i class="fa-solid fa-person-dress"></i>
+              </div>
+            </div>
+            <div class="sobre-content">
+              <div class="section-header left">
+                <h2 id="sobreNombre"></h2>
+                <p id="sobreTitulo"></p>
+              </div>
+              <p class="sobre-descripcion" id="sobreDescripcion"></p>
+
+              <div class="sobre-stats">
+                <div class="stat-item">
+                  <i class="fas fa-briefcase"></i>
+                  <div>
+                    <h3 id="statsExperiencia"></h3>
+                    <p>Años de Experiencia</p>
+                  </div>
                 </div>
-                <div class="servicios-grid" id="serviciosGrid"></div>
-            </div>
-        </section>
-
-        <section id="experiencia">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Experiencia</h2>
-                    <p>Trayectoria profesional destacada</p>
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <div>
+                    <h3 id="statsClientes"></h3>
+                    <p>Clientes Satisfechos</p>
+                  </div>
                 </div>
-                <div class="experiencia-timeline" id="experienciaTimeline"></div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="sobre">
-            <div class="container">
-                <div class="sobre-grid">
-                    <div class="sobre-image">
-                        <div class="sobre-card">
-                            <i class="fa-solid fa-person-dress"></i>
-                        </div>
-                    </div>
-                    <div class="sobre-content">
-                        <div class="section-header left">
-                            <h2 id="sobreNombre"></h2>
-                            <p id="sobreTitulo"></p>
-                        </div>
-                        <p class="sobre-descripcion" id="sobreDescripcion"></p>
-                        
-                        <div class="sobre-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-briefcase"></i>
-                                <div>
-                                    <h3 id="statsExperiencia"></h3>
-                                    <p>Años de Experiencia</p>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-users"></i>
-                                <div>
-                                    <h3 id="statsClientes"></h3>
-                                    <p>Clientes Satisfechos</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section id="contacto">
+        <div class="container">
+          <div class="contacto-card">
+            <div class="contacto-header">
+              <h2>¿Listo para optimizar tu contabilidad?</h2>
+              <p>Contáctame y comencemos a trabajar juntos</p>
             </div>
-        </section>
+            <div class="contacto-grid" id="contactoInfo"></div>
+          </div>
+        </div>
+      </section>
 
-        <section id="contacto">
-            <div class="container">
-                <div class="contacto-card">
-                    <div class="contacto-header">
-                        <h2>¿Listo para optimizar tu contabilidad?</h2>
-                        <p>Contáctame y comencemos a trabajar juntos</p>
-                    </div>
-                    <div class="contacto-grid" id="contactoInfo"></div>
-                </div>
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-brand">
+              <h3 id="footerNombre"></h3>
+              <p id="footerTexto"></p>
             </div>
-        </section>
+          </div>
+          <div class="footer-bottom">
+            <p id="footerCopyright"></p>
+          </div>
+        </div>
+      </footer>
+      <div id="modalRenta" class="modal-overlay" style="display: none">
+        <div class="modal-box">
+          <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="modal-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h2 class="modal-title">Consulta tu fecha de declaración de renta</h2>
+          <p class="modal-subtitle">
+            Ingresa tu número de cédula para saber cuándo te corresponde
+            declarar
+          </p>
+          <div class="modal-input-wrap">
+            <input
+              type="text"
+              id="cedulaInput"
+              placeholder="Ej: 1098765432"
+              maxlength="15"
+              inputmode="numeric"
+            />
+            <button id="consultarBtn">
+              <i class="fas fa-search"></i> Consultar
+            </button>
+          </div>
+          <div id="modalResultado" class="modal-resultado"></div>
+        </div>
+      </div>
 
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3 id="footerNombre"></h3>
-                        <p id="footerTexto"></p>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p id="footerCopyright"></p>
-                </div>
-            </div>
-        </footer>
-
-        <a href="#" class="whatsapp-btn" id="whatsappBtn" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
-        </a>
+      <a href="#" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+      </a>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
