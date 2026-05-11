@@ -306,7 +306,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-const fechasRenta = [
+const fechasNaturales = [
     { digitos: [1, 2],   fecha: "12 de agosto de 2026",   mes: "agosto" },
     { digitos: [3, 4],   fecha: "13 de agosto de 2026",   mes: "agosto" },
     { digitos: [5, 6],   fecha: "14 de agosto de 2026",   mes: "agosto" },
@@ -320,7 +320,6 @@ const fechasRenta = [
     { digitos: [21, 22], fecha: "27 de agosto de 2026",   mes: "agosto" },
     { digitos: [23, 24], fecha: "28 de agosto de 2026",   mes: "agosto" },
     { digitos: [25, 26], fecha: "31 de agosto de 2026",   mes: "agosto" },
-
     { digitos: [27, 28], fecha: "1 de septiembre de 2026",  mes: "septiembre" },
     { digitos: [29, 30], fecha: "2 de septiembre de 2026",  mes: "septiembre" },
     { digitos: [31, 32], fecha: "3 de septiembre de 2026",  mes: "septiembre" },
@@ -341,7 +340,6 @@ const fechasRenta = [
     { digitos: [61, 62], fecha: "24 de septiembre de 2026", mes: "septiembre" },
     { digitos: [63, 64], fecha: "25 de septiembre de 2026", mes: "septiembre" },
     { digitos: [65, 66], fecha: "28 de septiembre de 2026", mes: "septiembre" },
-
     { digitos: [67, 68], fecha: "1 de octubre de 2026",  mes: "octubre" },
     { digitos: [69, 70], fecha: "2 de octubre de 2026",  mes: "octubre" },
     { digitos: [71, 72], fecha: "5 de octubre de 2026",  mes: "octubre" },
@@ -361,29 +359,106 @@ const fechasRenta = [
     { digitos: [99,  0], fecha: "26 de octubre de 2026", mes: "octubre" },
 ];
 
+const fechasJuridicas = [
+    {
+        digito: 1,
+        cuota1: { fecha: "12 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "9 de julio de 2026",  label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 2,
+        cuota1: { fecha: "13 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "10 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 3,
+        cuota1: { fecha: "14 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "13 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 4,
+        cuota1: { fecha: "15 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "14 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 5,
+        cuota1: { fecha: "19 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "15 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 6,
+        cuota1: { fecha: "20 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "16 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 7,
+        cuota1: { fecha: "21 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "17 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 8,
+        cuota1: { fecha: "22 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "21 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 9,
+        cuota1: { fecha: "25 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "22 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+    {
+        digito: 0,
+        cuota1: { fecha: "26 de mayo de 2026",  label: "Declaración y pago 1a. cuota" },
+        cuota2: { fecha: "23 de julio de 2026", label: "Pago 2a. cuota" }
+    },
+];
+
 function buscarFechaRenta(cedula) {
     const limpia = cedula.replace(/\D/g, '');
     if (limpia.length < 2) return null;
-
     const ultimos2 = parseInt(limpia.slice(-2), 10);
-
-    for (const entrada of fechasRenta) {
-        if (entrada.digitos.includes(ultimos2)) {
-            return { ...entrada, ultimos2 };
-        }
+    for (const entrada of fechasNaturales) {
+        if (entrada.digitos.includes(ultimos2)) return { ...entrada, ultimos2 };
     }
     return null;
 }
 
-function inicializarModalRenta() {
-    const btnRenta    = document.getElementById('btnRenta');
-    const modal       = document.getElementById('modalRenta');
-    const modalClose  = document.getElementById('modalClose');
-    const consultarBtn = document.getElementById('consultarBtn');
-    const cedulaInput = document.getElementById('cedulaInput');
-    const resultado   = document.getElementById('modalResultado');
+function buscarFechaJuridica(nit) {
+    const limpia = nit.replace(/\D/g, '');
+    if (limpia.length < 1) return null;
+    const ultimo = parseInt(limpia.slice(-1), 10);
+    return fechasJuridicas.find(e => e.digito === ultimo) || null;
+}
 
-    const INICIO_VIGENCIA = new Date('2025-08-01T00:00:00');
+function inicializarModalRenta() {
+    const btnRenta     = document.getElementById('btnRenta');
+    const modal        = document.getElementById('modalRenta');
+    const modalClose   = document.getElementById('modalClose');
+    const consultarBtn = document.getElementById('consultarBtn');
+    const cedulaInput  = document.getElementById('cedulaInput');
+    const resultado    = document.getElementById('modalResultado');
+    const radios       = document.querySelectorAll('input[name="tipoPersona"]');
+
+    const INICIO_NATURALES  = new Date('2025-08-01T00:00:00');
+    const INICIO_JURIDICAS1 = new Date('2026-05-12T00:00:00');
+
+    function getTipo() {
+        return document.querySelector('input[name="tipoPersona"]:checked').value;
+    }
+
+    function actualizarPlaceholder() {
+        const tipo = getTipo();
+        cedulaInput.placeholder = tipo === 'natural' ? 'Ej: 1098765432' : 'Ej: 900123456';
+        cedulaInput.value = '';
+        resultado.innerHTML = '';
+        resultado.className = 'modal-resultado';
+
+        document.getElementById('inputLabel').textContent =
+            tipo === 'natural'
+                ? 'Número de cédula'
+                : 'NIT de la empresa (sin dígito de verificación)';
+    }
+
+    radios.forEach(r => r.addEventListener('change', actualizarPlaceholder));
 
     function abrirModal() {
         modal.style.display = 'flex';
@@ -400,86 +475,124 @@ function inicializarModalRenta() {
             cedulaInput.value = '';
             resultado.innerHTML = '';
             resultado.className = 'modal-resultado';
+            document.querySelector('input[name="tipoPersona"][value="natural"]').checked = true;
+            actualizarPlaceholder();
         }, 300);
     }
 
     btnRenta.addEventListener('click', abrirModal);
     modalClose.addEventListener('click', cerrarModal);
-
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) cerrarModal();
-    });
-
-    document.addEventListener('keydown', function(e) {
+    modal.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
+    document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && modal.style.display === 'flex') cerrarModal();
     });
+    cedulaInput.addEventListener('keydown', e => { if (e.key === 'Enter') consultarBtn.click(); });
+    cedulaInput.addEventListener('input', function() { this.value = this.value.replace(/\D/g, ''); });
 
-    cedulaInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') consultarBtn.click();
-    });
+    consultarBtn.addEventListener('click', function () {
+        const valor = cedulaInput.value.trim();
+        const tipo  = getTipo();
 
-    cedulaInput.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '');
-    });
-
-    consultarBtn.addEventListener('click', function() {
-        const cedula = cedulaInput.value.trim();
-
-        if (cedula.length < 5) {
+        if (valor.length < 5) {
             resultado.className = 'modal-resultado modal-resultado--error';
-            resultado.innerHTML = `
-                <i class="fas fa-exclamation-circle"></i>
-                <p>Por favor ingresa un número de cédula válido (mínimo 5 dígitos).</p>
-            `;
+            resultado.innerHTML = `<i class="fas fa-exclamation-circle"></i><p>Ingresa un número válido (mínimo 5 dígitos).</p>`;
             return;
         }
 
-        const hoy = new Date();
-        const noVigente = hoy < INICIO_VIGENCIA;
+        if (tipo === 'natural') {
+            const hoy      = new Date();
+            const info     = buscarFechaRenta(valor);
+            const noVigente = hoy < INICIO_NATURALES;
+            const ultimos2Str = info ? String(info.ultimos2).padStart(2, '0') : '--';
 
-        const info = buscarFechaRenta(cedula);
+            if (!info) {
+                resultado.className = 'modal-resultado modal-resultado--error';
+                resultado.innerHTML = `<i class="fas fa-question-circle"></i><p>No se encontró fecha para los dígitos <strong>${valor.slice(-2)}</strong>.</p>`;
+                return;
+            }
 
-        if (!info) {
-            resultado.className = 'modal-resultado modal-resultado--error';
-            resultado.innerHTML = `
-                <i class="fas fa-question-circle"></i>
-                <p>No se encontró una fecha para los dígitos <strong>${cedula.slice(-2)}</strong>. Verifica tu cédula.</p>
-            `;
-            return;
-        }
+            if (noVigente) {
+                resultado.className = 'modal-resultado modal-resultado--info';
+                resultado.innerHTML = `
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p class="resultado-label">Últimos 2 dígitos de tu cédula</p>
+                        <p class="resultado-digitos">${ultimos2Str}</p>
+                        <p class="resultado-fecha">${info.fecha}</p>
+                        <p class="resultado-aviso"><i class="fas fa-info-circle"></i>
+                        El plazo aún no está vigente. Las declaraciones de renta 2025 para personas naturales inician el <strong>1 de agosto de 2026</strong>.</p>
+                    </div>`;
+            } else {
+                resultado.className = 'modal-resultado modal-resultado--success';
+                resultado.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <p class="resultado-label">Tu fecha límite de declaración y pago</p>
+                        <p class="resultado-digitos">${ultimos2Str}</p>
+                        <p class="resultado-fecha">${info.fecha}</p>
+                        <p class="resultado-aviso"><i class="fas fa-exclamation-triangle"></i>
+                        Declara antes de esta fecha para evitar sanciones.
+                        <a href="https://wa.me/${datosWeb.whatsapp.numero}" target="_blank">¿Necesitas ayuda?</a></p>
+                    </div>`;
+            }
 
-        const ultimos2Str = String(info.ultimos2).padStart(2, '0');
-
-        if (noVigente) {
-            resultado.className = 'modal-resultado modal-resultado--info';
-            resultado.innerHTML = `
-                <i class="fas fa-clock"></i>
-                <div>
-                    <p class="resultado-label">Últimos 2 dígitos de tu cédula:</p>
-                    <p class="resultado-digitos">${ultimos2Str}</p>
-                    <p class="resultado-fecha">${info.fecha}</p>
-                    <p class="resultado-aviso">
-                        <i class="fas fa-info-circle"></i>
-                        El plazo para declarar aún no está vigente. Las declaraciones de renta 2024
-                        para personas naturales inician el <strong>1 de agosto de 2025</strong>.
-                    </p>
-                </div>
-            `;
         } else {
-            resultado.className = 'modal-resultado modal-resultado--success';
-            resultado.innerHTML = `
-                <i class="fas fa-check-circle"></i>
-                <div>
-                    <p class="resultado-label">Tu fecha límite de declaración y pago:</p>
-                    <p class="resultado-digitos">${ultimos2Str}</p>
-                    <p class="resultado-fecha">${info.fecha}</p>
-                    <p class="resultado-aviso">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Recuerda declarar antes de esta fecha para evitar sanciones. 
-                        ¿Necesitas ayuda? <a href="https://wa.me/${datosWeb.whatsapp.numero}" target="_blank">Contáctame por WhatsApp</a>
-                    </p>
-                </div>
-            `;
+            const hoy       = new Date();
+            const info      = buscarFechaJuridica(valor);
+            const noVigente = hoy < INICIO_JURIDICAS1;
+            const ultimoStr = valor.slice(-1);
+
+            if (!info) {
+                resultado.className = 'modal-resultado modal-resultado--error';
+                resultado.innerHTML = `<i class="fas fa-question-circle"></i><p>No se encontró fecha para el dígito <strong>${ultimoStr}</strong>.</p>`;
+                return;
+            }
+
+            if (noVigente) {
+                resultado.className = 'modal-resultado modal-resultado--info';
+                resultado.innerHTML = `
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p class="resultado-label">Último dígito del NIT: ${ultimoStr}</p>
+                        <p class="resultado-digitos">${ultimoStr}</p>
+                        <div class="cuotas-grid">
+                            <div class="cuota-item">
+                                <span class="cuota-badge cuota-1">1a. cuota</span>
+                                <p class="cuota-label">${info.cuota1.label}</p>
+                                <p class="cuota-fecha">${info.cuota1.fecha}</p>
+                            </div>
+                            <div class="cuota-item">
+                                <span class="cuota-badge cuota-2">2a. cuota</span>
+                                <p class="cuota-label">${info.cuota2.label}</p>
+                                <p class="cuota-fecha">${info.cuota2.fecha}</p>
+                            </div>
+                        </div>
+                        <p class="resultado-aviso"><i class="fas fa-info-circle"></i>
+                        El plazo aún no está vigente. Las declaraciones de renta 2025 para personas jurídicas inician el <strong>12 de mayo de 2026</strong>.</p>
+                    </div>`;
+            } else {
+                resultado.className = 'modal-resultado modal-resultado--success';
+                resultado.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <p class="resultado-label">Último dígito del NIT: ${ultimoStr}</p>
+                        <div class="cuotas-grid">
+                            <div class="cuota-item">
+                                <span class="cuota-badge cuota-1">1a. cuota</span>
+                                <p class="cuota-label">${info.cuota1.label}</p>
+                                <p class="cuota-fecha">${info.cuota1.fecha}</p>
+                            </div>
+                            <div class="cuota-item">
+                                <span class="cuota-badge cuota-2">2a. cuota</span>
+                                <p class="cuota-label">${info.cuota2.label}</p>
+                                <p class="cuota-fecha">${info.cuota2.fecha}</p>
+                            </div>
+                        </div>
+                        <p class="resultado-aviso"><i class="fas fa-exclamation-triangle"></i>
+                        Declara antes de estas fechas para evitar sanciones.
+                        <a href="https://wa.me/${datosWeb.whatsapp.numero}" target="_blank">¿Necesitas ayuda?</a></p>
+                    </div>`;
+            }
         }
     });
 }

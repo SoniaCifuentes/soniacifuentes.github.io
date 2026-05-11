@@ -185,9 +185,22 @@
           </div>
           <h2 class="modal-title">Consulta tu fecha de declaración de renta</h2>
           <p class="modal-subtitle">
-            Ingresa tu número de cédula para saber cuándo te corresponde
-            declarar
+            Selecciona tu tipo de persona e ingresa tu número
           </p>
+
+          <!-- Radio buttons -->
+          <div class="tipo-persona">
+            <label class="tipo-option">
+              <input type="radio" name="tipoPersona" value="natural" checked />
+              <span><i class="fas fa-user"></i> Persona natural</span>
+            </label>
+            <label class="tipo-option">
+              <input type="radio" name="tipoPersona" value="juridica" />
+              <span><i class="fas fa-building"></i> Persona jurídica</span>
+            </label>
+          </div>
+
+          <p class="input-label" id="inputLabel">Número de cédula</p>
           <div class="modal-input-wrap">
             <input
               type="text"
